@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Scoreboard Overlay</title>
+    <style>
+        body {
+            background-color: transparent; /* ESSENZIALE per l'overlay trasparente */
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        /* Contenitore principale (Lo Score Bug) */
+        #scoreboard-bug {
+            display: flex;
+            align-items: center;
+            /* Usa RGBA per la trasparenza dello sfondo della barra */
+            background-color: rgba(0, 34, 68, 0.9); /* Blu scuro (effetto barra) con leggera trasparenza */
+            font-family: 'Roboto', Arial, sans-serif;
+            color: white;
+            font-weight: bold;
+            height: 40px; 
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            max-width: fit-content; /* Adatta la larghezza al contenuto */
+        }
+
+        /* Nomi Squadra */
+        .team {
+            padding: 0 10px;
+            font-size: 1.2em;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            background-color: #002D5A; /* Blu ancora più scuro per lo sfondo del nome */
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Contenitore Punteggi */
+        .score-container {
+            display: flex;
+            align-items: center;
+            background-color: black; 
+            height: 100%;
+        }
+
+        .score {
+            padding: 0 8px;
+            font-size: 1.5em;
+            color: white; 
+            min-width: 25px; /* Per mantenere l'allineamento con punteggi a 1 o 2 cifre */
+            text-align: center;
+        }
+
+        /* La Barra Rossa Verticale */
+        .separator-bar {
+            width: 3px;
+            height: 80%;
+            background-color: red; /* La linea rossa richiesta */
+        }
+
+        /* Informazioni Partita: Periodo e Tempo */
+        .game-info {
+            padding: 0 10px;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            color: #ddd; /* Grigio chiaro */
+        }
+
+        .period {
+            margin-right: 5px;
+            font-size: 1.1em;
+            color: #fff;
+        }
+
+        .time {
+            font-size: 1.2em;
+            color: #FFC300; /* Giallo acceso per il tempo (opzionale) */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="scoreboard-bug">
+        <div class="team team-left" id="team1-name">VPE</div>
+        <div class="score-container">
+            <div class="score" id="score1">0</div>
+            <div class="separator-bar red-bar"></div>
+            <div class="score" id="score2">0</div>
+        </div>
+        <div class="team team-right" id="team2-name">LAT</div>
+        <div class="game-info">
+            <span class="period" id="period">1°T</span>
+            <span class="time" id="game-time">00:00</span>
+        </div>
+    </div>
+
+</body>
+</html>
